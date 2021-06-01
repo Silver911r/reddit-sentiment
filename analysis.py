@@ -26,7 +26,10 @@ def get_sentiment_r(reddit_group):
     headlines_df = pd.DataFrame(headlines)
 
     headlines_df.to_csv(
-        reddit_group + ".csv", header=False, encoding="utf-8", index=False
+        "csv_files_headlines/" + reddit_group + ".csv",
+        header=False,
+        encoding="utf-8",
+        index=False,
     )
 
     try:
