@@ -6,7 +6,7 @@ USER_AGENT = "your user agent"
 CLIENT_ID="your client id"
 CLIENT_SECRET="your secret"
 
-Change the "replace_me_config.py" with the new credentials.
+Change the "replace_me_config.py" with the new credentials and change the name of the file to "config.py".
 
 Open up the jupyter notebook "reddit_analysis.ipynb" then follow the steps.
 
