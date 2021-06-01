@@ -7,6 +7,9 @@ import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer as SIA
 import ssl
 import config
+import datetime
+
+time = datetime.datetime.now().replace(microsecond=0).isoformat()
 
 
 reddit = praw.Reddit(
@@ -17,6 +20,7 @@ reddit = praw.Reddit(
 
 
 def get_sentiment_r(reddit_group):
+
     # hot new rising top
     headlines = set()
     for submission in reddit.subreddit(reddit_group).hot(limit=None):
@@ -26,7 +30,7 @@ def get_sentiment_r(reddit_group):
     headlines_df = pd.DataFrame(headlines)
 
     headlines_df.to_csv(
-        "csv_files_headlines/" + reddit_group + ".csv",
+        f"csv_files_headlines/{time}-{reddit_group}.csv",
         header=False,
         encoding="utf-8",
         index=False,
@@ -60,7 +64,7 @@ def get_sentiment_r(reddit_group):
     df2 = df[["headline", "label"]]
 
     df2.to_csv(
-        "csv_files_headlines/" + reddit_group + "_headlines_labels.csv",
+        f"csv_files_headlines/{time}-{reddit_group}_headlines_labels.csv",
         encoding="utf-8",
         index=False,
     )
@@ -79,4 +83,4 @@ def get_sentiment_r(reddit_group):
     counts = df.label.value_counts(normalize=True) * 100
     sns.barplot(x=counts.index, y=counts, ax=ax)
 
-    fig.savefig("sentiment_charts/" + reddit_group + ".png")
+    fig.savefig(f"sentiment_charts/{time}-{reddit_group}.png")
