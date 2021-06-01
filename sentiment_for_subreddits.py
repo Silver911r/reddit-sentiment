@@ -1,4 +1,10 @@
 import analysis
 
 if __name__ == "__main__":
-    analysis.
+    analysis.get_sentiment_r("stocks")
+    analysis.get_sentiment_r("finance")
+    analysis.get_sentiment_r("option")
+    analysis.get_sentiment_r("wallstreetbets")
+    analysis.get_sentiment_r("stockmarket")
+    analysis.get_sentiment_r("investing")
+    analysis.get_sentiment_r("superstonk")
