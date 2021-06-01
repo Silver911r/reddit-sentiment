@@ -80,6 +80,3 @@ def get_sentiment_r(reddit_group):
     sns.barplot(x=counts.index, y=counts, ax=ax)
 
     fig.savefig("sentiment_charts/" + reddit_group + ".png")
-
-
-get_sentiment_r("stocks")
