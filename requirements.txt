@@ -5,3 +5,5 @@ seaborn
 praw
 nltk
 ssl
+scrapy
+readability-lxml
