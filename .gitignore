@@ -3,5 +3,5 @@
 reddit_venv
 config.py
 __pycache__
-csv_files_headlines
-sentiment_charts
+csv_files_headlines/*
+sentiment_charts/*
